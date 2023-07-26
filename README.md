@@ -2,6 +2,10 @@
 
 The only configuration guide you need for shell.
 
+![GitHub Repo stars](https://img.shields.io/github/stars/Liskie/Need4Shell)
+![GitHub watchers](https://img.shields.io/github/watchers/Liskie/Need4Shell)
+![GitHub forks](https://img.shields.io/github/forks/Liskie/Need4Shell)
+
 ## Steps
 
 1. Install Oh-My-Zsh
