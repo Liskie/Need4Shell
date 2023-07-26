@@ -46,6 +46,47 @@ The only configuration guide you need for shell.
    ```shell
    conda config --set changeps1 False
    ```
+   
+4. Configure zsh plugins
+   
+   We use a selected minimal set of plugins for zsh. You may edit the zsh config file:
+   ```shell
+   vim ~/.zshrc
+   ```
+   and replace the default plugins `plugins=(git)` with the following:
+   ```shell
+   plugins=(
+        git
+        extract
+        cp
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+        sudo
+        tmux
+        autojump
+   )
+   ```
+   Some of the plugins are not installed by default. You may want to install them first:
+
+   For `autojump`:
+   
+   Install it with `sudo apt install autojump` on Ubuntu or `brew install autojump` on macOS.
+
+   For `zsh-autosuggestions`:
+   
+   ```shell
+   git clone git@github.com:zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+
+   For `zsh-syntax-highlighting`:
+   
+   ```shell
+   git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+
+5. Restart your shell
+
+   After all these changes, you may need to restart your shell to see the changes.
 
 ## Others
 
