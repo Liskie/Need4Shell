@@ -96,6 +96,30 @@ The only configuration guide you need for shell.
 
 - We provide a [Monokai Pro based color scheme](Monokai_Pro_Material.icls) for JetBrains IDEs in this repository.
 
+- If you develop with Python, you may want to optimize your traceback output with _Rich_ globally. 
+   To do so, you should first make sure **conda** is installed, and run:
+
+   ```shell
+   conda activate "your env name"
+   pip install rich
+   ```
+   
+   Next, according to the [Official Documentation of Rich](https://rich.readthedocs.io/en/stable/traceback.html), you need to modify the `sitecustomize.py` file.
+   Usually this file is located in your virtual env directory, for example, `~/anaconda3/envs/base/lib/python3.11/site-packages/sitecustomize.py`.
+   If you are not sure about where it is, you can run `from distutils.sysconfig import get_python_lib;print(get_python_lib())` in a Python shell.
+   This prints the path of the `site-packages` directory, and you can find the `sitecustomize.py` file in it. If the file does not exist, just create one.   
+   Once you find the `sitecustomize.py` file, you need to add the following code to it:
+   
+   ```python
+   try:
+       from rich import traceback
+       traceback.install(show_locals=True, width=10000)
+   except ImportError:
+       pass
+   ```
+  
+   It's done! Now you can enjoy the beautiful traceback output with _Rich_. 
+   But notice that these configurations are env-specific, so you need to repeat these steps for every virtual env you have.
 
 ---
 
