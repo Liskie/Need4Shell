@@ -78,6 +78,10 @@ The only configuration guide you need for shell.
     Install it with `sudo apt install autojump` on Ubuntu or `brew install autojump` on macOS.
     
     For `zsh-autosuggestions`:
+
+    Install it with `sudo apt install zsh-autosuggestions` on Ubuntu or `brew install zsh-autosuggestions` on macOS.
+
+    You can also install it manually:    
     
     ```shell
     git clone git@github.com:zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -85,6 +89,10 @@ The only configuration guide you need for shell.
     
     For `zsh-syntax-highlighting`:
     
+    Install it with `sudo apt install zsh-syntax-highlighting` on Ubuntu or `brew install zsh-syntax-highlighting` on macOS.
+
+    You can also install it manually:   
+
     ```shell
     git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     ```
@@ -95,7 +103,7 @@ The only configuration guide you need for shell.
 
 ## Others
 
-- We provide a [Monokai Pro based color scheme](Monokai_Pro_Material.icls) for JetBrains IDEs in this repository.
+- We provide a [Monokai Pro based color scheme](configs/Monokai_Pro_Material.icls) for JetBrains IDEs in this repository.
 
 - If you develop with Python, you may want to optimize your traceback output with _Rich_ globally. 
     To do so, you should first make sure **conda** is installed, and run:
@@ -126,6 +134,29 @@ The only configuration guide you need for shell.
     
     It's done! Now you can enjoy the beautiful traceback output with _Rich_. 
     But notice that these configurations are env-specific, so you need to repeat these steps for every virtual env you have.
+
+- If you are using hdfs, we recommend setting the following aliases:
+
+    ```shell
+    alias hfs='hdfs dfs'
+    alias hls='hdfs dfs -ls'
+    alias hcat='hdfs dfs -cat'
+    alias hput='hdfs dfs -put'
+    alias hget='hdfs dfs -get'
+    alias hrm='hdfs dfs -rm'
+    alias hrmdir='hdfs dfs -rmdir'
+    alias hmkdir='hdfs dfs -mkdir'
+    alias hdu='hdfs dfs -du'
+    alias hmv='hdfs dfs -mv'
+    alias hcp='hdfs dfs -cp'
+    alias htail='hdfs dfs -tail'
+    alias hchmod='hdfs dfs -chmod'
+    alias hchown='hdfs dfs -chown'
+    alias hchgrp='hdfs dfs -chgrp'
+    alias htouchz='hdfs dfs -touchz'
+    ```
+  
+    Copy and paste the above code to your `~/.zshrc` file, and `source ~/.zshrc`, then you can use these aliases in your shell.
 
 ## Troubleshooting
 
